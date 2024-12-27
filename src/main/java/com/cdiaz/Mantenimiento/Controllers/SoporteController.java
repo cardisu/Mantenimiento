@@ -1,17 +1,17 @@
 package com.cdiaz.Mantenimiento.Controllers;
 
 
+import org.springframework.ui.Model;
 import com.cdiaz.Mantenimiento.Services.SoporteRepository;
 import com.cdiaz.Mantenimiento.Models.Soporte;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/consultas/soportes")
+@Controller
+@RequestMapping("/soportes")
 public class SoporteController {
     private final SoporteRepository soporteRepository;
 
@@ -20,7 +20,9 @@ public class SoporteController {
     }
 
     @GetMapping
-    public List<Soporte> obtenerSoportes() {
-        return soporteRepository.findAll();
+    public String obtenerSoportes(Model model) {
+        List<Soporte> soporte = soporteRepository.findAll();
+        model.addAttribute("soportes", soporte);
+        return "soportes";
     }
 }

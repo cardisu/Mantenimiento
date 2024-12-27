@@ -2,14 +2,16 @@ package com.cdiaz.Mantenimiento.Controllers;
 
 import com.cdiaz.Mantenimiento.Models.Mantenimiento;
 import com.cdiaz.Mantenimiento.Services.MantenimientoRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/consultas/mantenimientos")
+@Controller
+@RequestMapping("/mantenimientos")
 public class MantenimientoController {
     private final MantenimientoRepository mantenimientoRepository;
 
@@ -18,7 +20,9 @@ public class MantenimientoController {
     }
 
     @GetMapping
-    public List<Mantenimiento> obtenerMantenimientos(){
-        return mantenimientoRepository.findAll();
+    public String obtenerMantenimientos(Model model){
+        List<Mantenimiento> manteniento = mantenimientoRepository.findAll();
+        model.addAttribute("mantenimientos", manteniento);
+        return "mantenimientos";
     }
 }
