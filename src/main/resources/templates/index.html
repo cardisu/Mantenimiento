@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,14 @@
 <body>
 <h1>Consultas Disponibles</h1>
 <div class="buttons">
-  <button onclick="fetchUsuarios()">Ver Usuarios</button>
+  <button onclick="location.href='/usuarios'">Ver Usuarios</button>
   <button onclick="fetchSoporte()">Ver Soporte</button>
   <button onclick="fetchMantenimientos()">Ver Mantenimientos</button>
 </div>
 <div id="resultados" class="resultados">Haz clic en un botón para cargar los datos</div>
-<!--
-<div>
-  <button>Agregar usuarios</button>
-</div> -->
 
+<!--||||||
 <script src="/js/script.js"></script>
-
+-->
 </body>
 </html>
