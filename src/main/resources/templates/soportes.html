@@ -8,21 +8,26 @@
 </head>
 <body>
 <h1>Lista de Soportes</h1>
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Ciudad</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="soporte : ${soportes}">
-        <td th:text="${soporte.id_soporte}"></td>
-        <td th:text="${soporte.nombre_soporte}"></td>
-        <td th:text="${soporte.ciudad}"></td>
-    </tr>
-    </tbody>
-</table>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="soporte : ${soportes}">
+            <td th:text="${soporte.id_soporte}"></td>
+            <td th:text="${soporte.nombre_soporte}"></td>
+            <td th:text="${soporte.ciudad}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <button onclick="location.href='/index'">Regresar</button>
+    </div>
+</div>
 </body>
 </html>

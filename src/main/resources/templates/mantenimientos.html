@@ -8,29 +8,34 @@
 </head>
 <body>
 <h1>Lista de Mantenimientos</h1>
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>ID Soporte</th>
-        <th>ID Usuario</th>
-        <th>Tipo de Activo</th>
-        <th>Razon del Mantenimiento</th>
-        <th>Fecha del Mantenimiento</th>
-        <th>Observaciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="mantenimiento : ${mantenimientos}">
-        <td th:text="${mantenimiento.id_mantenimiento}"></td>
-        <td th:text="${mantenimiento.id_soporte.id_soporte}"></td>
-        <td th:text="${mantenimiento.id_usuario.id_usuario}"></td>
-        <td th:text="${mantenimiento.tipo_activo}"></td>
-        <td th:text="${mantenimiento.razon_mantenimiento}"></td>
-        <td th:text="${mantenimiento.fecha_mantenimiento}"></td>
-        <td th:text="${mantenimiento.observaciones}"></td>
-    </tr>
-    </tbody>
-</table>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID Soporte</th>
+            <th>ID Usuario</th>
+            <th>Tipo de Activo</th>
+            <th>Razon del Mantenimiento</th>
+            <th>Fecha del Mantenimiento</th>
+            <th>Observaciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="mantenimiento : ${mantenimientos}">
+            <td th:text="${mantenimiento.id_mantenimiento}"></td>
+            <td th:text="${mantenimiento.id_soporte.id_soporte}"></td>
+            <td th:text="${mantenimiento.id_usuario.id_usuario}"></td>
+            <td th:text="${mantenimiento.tipo_activo}"></td>
+            <td th:text="${mantenimiento.razon_mantenimiento}"></td>
+            <td th:text="${mantenimiento.fecha_mantenimiento}"></td>
+            <td th:text="${mantenimiento.observaciones}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <button onclick="location.href='/index'">Regresar</button>
+    </div>
+</div>
 </body>
 </html>
